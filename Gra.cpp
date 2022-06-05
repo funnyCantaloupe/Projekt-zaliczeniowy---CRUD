@@ -5,3 +5,4 @@ void Gra::show() {
 	cout << "Autor: " << autor << endl;
 	cout << "Gatunek: " << gatunek << endl;
 }
+

@@ -12,9 +12,9 @@ class ListManager
 	Element* head = NULL;
 
 public:
-	void pushBack(Gra gra) {
+	void pushBack(Gra* gra) {
 		Element* N = new Element;
-		N->id = gra.nazwa;
+		N->id = gra->nazwa;
 		N->next = NULL;
 		Element* P = head;
 		if (P == NULL)

@@ -9,14 +9,12 @@ class GraKomputerowa :  public Gra
 
 public:
 	
-	void show();
 
-	GraKomputerowa(string title = "brak danych", string author = "brak danych", string genre = "brak danych", string platform = "PC") {
-		nazwa = title;
-		autor = author;
-		gatunek = genre;
-		platforma = platform;
-	}
+	GraKomputerowa(string title = "brak danych", string author = "brak danych", string genre = "brak danych", string platforma = "PC") : Gra(title, author, genre), platforma(platforma) {}
+	GraKomputerowa(Gra& gra, string platform = "PC") : Gra(gra), platforma(platform) {}
+
+	string getDetails();
+		
 };
 
 #endif
