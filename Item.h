@@ -2,6 +2,7 @@
 #define nazwa_item
 
 #include <iostream>
+#include "Gra.h"
 
 using namespace std;
 
@@ -22,6 +23,8 @@ public:
 	string getDetail();
 
 	Item(int, string, string);
+	Item(int, string, Gra*);
+
 };
 
 #endif

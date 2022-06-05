@@ -145,6 +145,7 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ProductsProvider.cpp" />
     <ClCompile Include="Projekt zaliczeniowy - CRUD.cpp" />
+    <ClCompile Include="Sklep.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Element.h" />
@@ -153,7 +154,9 @@
     <ClInclude Include="GraPlanszowa.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ListManager.h" />
+    <ClInclude Include="exceptions.h" />
     <ClInclude Include="ProductsProvider.h" />
+    <ClInclude Include="Sklep.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

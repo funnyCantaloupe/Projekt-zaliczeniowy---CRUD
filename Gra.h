@@ -1,12 +1,14 @@
 #ifndef gra1
 #define gra1
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
 class Gra
 {
 	friend class ListManager;
+
 protected:
 	string nazwa;
 	string autor;
@@ -20,7 +22,9 @@ public:
 	}
 
 	void show();
-	
+
+	virtual string getDetails() = 0;
+
 };
 
 #endif

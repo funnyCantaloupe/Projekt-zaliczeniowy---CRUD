@@ -1,4 +1,5 @@
 #include "Item.h"
+#include "Sklep.h"
 
 using namespace std;
 
@@ -23,9 +24,17 @@ string Item::getDetail() {
 }
 
 Item::Item(int PRICE, string CATEGORY, string DETAIL) {
-	id = maxID + 1;
+	id = maxID;
 	maxID++;
 	price = PRICE;
 	category = CATEGORY;
 	detail = DETAIL;
 }
+
+Item::Item(int PRICE, string CATEGORY, Gra* gra) {
+	id = maxID;
+	maxID++;
+	price = PRICE;
+	category = CATEGORY;
+}
+

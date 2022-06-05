@@ -1,8 +1,15 @@
 #include "ProductsProvider.h"
 #include <algorithm>
-#include <map>
+#include <iostream>
+#include <utility>
+#include "Sklep.h"
+
 
 using namespace std;
+
+void ProductsProvider::addItem(int a, string b, Gra* c) {
+	productsList.push_back(Item::Item(a, b, c));
+}
 
 void ProductsProvider::addItem(int a, string b, string c) {
 	productsList.push_back(Item::Item(a, b, c));
@@ -39,11 +46,8 @@ void ProductsProvider::getSortedItems() {
 		cout << "ID: " << n.id << endl;
 		cout << "Cena: " << n.price << endl;
 		cout << "Kategoria: " << n.category << endl;
-		cout << "Detale: " << n.detail << endl;
+		cout << "Szczegoly: " << n.detail;
 	}
 
 }
 
-void ProductsProvider::getGroupedItems() {
-
-}

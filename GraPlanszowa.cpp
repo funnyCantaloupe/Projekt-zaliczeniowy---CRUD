@@ -1,6 +1,8 @@
 #include "GraPlanszowa.h"
 
-void GraPlanszowa::show() {
-	Gra::show();
-	cout << "Waga: " << waga << endl;
+string GraPlanszowa::getDetails() {
+	ostringstream z;
+	z << waga;
+	string d(z.str());
+	return nazwa + ", " + autor + ", " + gatunek + ", " + d;
 }

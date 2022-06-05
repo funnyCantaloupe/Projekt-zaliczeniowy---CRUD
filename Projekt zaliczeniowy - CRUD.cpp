@@ -5,6 +5,7 @@
 #include "GraPlanszowa.h"
 #include "ListManager.h"
 #include "ProductsProvider.h"
+#include "Sklep.h"
 
 using namespace std;
 
@@ -12,31 +13,98 @@ int Item::maxID = 0;
 
 int main() {
 
-	Gra ck3("Crusader Kings", "Paradox");
+	Sklep menuSklep;
+	ProductsProvider menuProvider;
 
-	Gra* neuro = new Gra("Neuroshima");
+	cout << "1: Dodaj przedmiot\n2: Usun przedmiot\n3: Wypisz baze przedmiotow\n4: Odczytaj z pliku\n5: Zapisz do pliku\n6: Zakoncz\n";
+	char wybor;
+	cin >> wybor;
 
-	GraPlanszowa* neuro_board = new GraPlanszowa(*neuro);
+	int typ_przedmiotu;
+	string n;
+	string a;
+	string g;
+	string p;
+	string k;
+	string s;
+	int w;
+	int c;
+	int i;
 
-	neuro_board->show();
+	do {
+		switch (wybor) {
+		case '1':
+			cout << "\n1: Dodaj gre komputerowa\n2: Dodaj gre planszowa\n3: Dodaj inny przedmiot\n";
+			cin >> typ_przedmiotu;
+			if (typ_przedmiotu == '1') {
 
-	ListManager* manager = new ListManager;
+				cout << "Podaj cene: ";
+				cin >> c;
 
-	manager->pushBack(*neuro);
+				cout << "Podaj nazwe: ";
+				cin >> n;
+				cout << "Podaj autora: ";
+				cin >> a;
+				cout << "Podaj gatunek: ";
+				cin >> g;
+				cout << "Podaj platforme: ";
+				cin >> p;
 
-	manager->showAll();
+				menuSklep.create(n, a, g, p);
+				Sklep* psklep = &menuSklep;
+				Gra* pgra = menuSklep.last_element(psklep);
+				menuProvider.addItem(c, "gra komputerowa", pgra);
+			}
+			else if (typ_przedmiotu == '2') {
 
-	ProductsProvider provider;
+				cout << "Podaj cene: ";
+				cin >> c;
 
-	provider.addItem(10, "gra", "Dixit");
-	provider.addItem(25, "gra", "Nemesis");
-	provider.addItem(32, "gra", "Battle Brothers");
-	provider.addItem(5, "ksiazka", "Przepis na czlowieka");
+				cout << "Podaj nazwe: ";
+				cin >> n;
+				cout << "Podaj autora: ";
+				cin >> a;
+				cout << "Podaj gatunek: ";
+				cin >> g;
+				cout << "Podaj wage: ";
+				cin >> w;
 
-	provider.getSortedItems();
+				menuSklep.create(n, a, g, w);
+				Sklep* psklep = &menuSklep;
+				Gra* pgra = menuSklep.last_element(psklep);
+				menuProvider.addItem(c, "gra komputerowa", pgra);
 
+			}
+			else if (typ_przedmiotu == 3) {
+				cout << "Podaj cene: ";
+				cin >> c;
+				cout << "Podaj kategorie: ";
+				cin >> k;
+				cout << "Podaj szczegoly: ";
+				cin >> s;
+
+				menuProvider.addItem(c, k, s);
+			}
+			else {
+				cout << "Podaj poprawna cyfre\n";
+			}
+			break;
+
+		case '2':
+			cout << "Podaj ID przedmiotu do usuniecia: ";
+			cin >> i;
+			menuSklep.remove(i);
+			break;
+
+		case '3':
+
+			break;
+		}
+
+		cout << "1: Dodaj przedmiot\n2: Usun przedmiot\n3: Wypisz baze przedmiotow\n4: Odczytaj z pliku\n5: Zapisz do pliku\n6: Zakoncz\n";
+		cin >> wybor;
+	} while (wybor != '6');
 	
-
 
 	return 0;
 }
