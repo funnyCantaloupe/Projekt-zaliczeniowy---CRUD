@@ -11,6 +11,8 @@ using namespace std;
 
 class ProductsProvider
 {
+	friend class Sklep;
+
 public:
 
 	void addItem(int a, string b, string c);

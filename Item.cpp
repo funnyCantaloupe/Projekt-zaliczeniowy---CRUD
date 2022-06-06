@@ -1,5 +1,6 @@
 #include "Item.h"
 #include "Sklep.h"
+#include <string>
 
 using namespace std;
 

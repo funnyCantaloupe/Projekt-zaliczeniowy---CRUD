@@ -13,20 +13,19 @@ void ProductsProvider::addItem(int a, string b, string c) {
 
 void ProductsProvider::removeItem(int id) {
 
-	if (productsList.begin()->id != 0) {
-
-		for (auto& n : productsList)
-		{
+	if (Item::maxID != 0) {
+		for (auto& n : productsList) {
 			if (id == n.id) {
 				delete& n;
 				cout << "Usunieto obiekt." << endl;
-				break;
+				Item::maxID = 0;
+				return;
 			}
-			
 		}
+		cout << "Nie ma obiektu o takim ID." << endl;	
 	}
 	else {
-		cout << "Nie ma obiektu o takim ID." << endl;
+		cout << "Baza jest pusta." << endl;
 	}
 }
 
@@ -58,13 +57,14 @@ bool compareIDinItems(Item i1, Item i2)
 void ProductsProvider::getSortedItems() {
 
 	if (!productsList.empty()) {
+		
 		for (auto& n : productsList)
-		{
+		{	
 			sort(productsList.begin(), productsList.end(), compareItems);
-			cout << "ID: " << n.id << endl;
-			cout << "Cena: " << n.price << endl;
-			cout << "Kategoria: " << n.category << endl;
-			cout << "Szczegoly: " << n.detail << endl;
+			cout << "ID: " << n.getID() << endl;
+			cout << "Cena: " << n.getPrice() << endl;
+			cout << "Kategoria: " << n.getCategory() << endl;
+			cout << "Szczegoly: " << n.getDetail() << endl;
 			cout << endl;
 		}
 }

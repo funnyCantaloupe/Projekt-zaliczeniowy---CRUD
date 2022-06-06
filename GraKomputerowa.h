@@ -6,6 +6,7 @@
 class GraKomputerowa :  public Gra
 {
 	string platforma;
+	friend class ProductsProvider;
 
 public:
 	

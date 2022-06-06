@@ -23,19 +23,25 @@ int main() {
 
 	char wybor;
 
-	cout << "1: Dodaj przedmiot\n2: Usun przedmiot\n3: Wypisz baze przedmiotow\n4: Modyfikuj cene po ID\n5: Zapisz do pliku\n6: Odczytaj z pliku\n";
+	cout << "1: Dodaj przedmiot\n2: Usun przedmiot\n3: Wypisz baze przedmiotow\n4: Modyfikuj cene po ID\n5: Zapisz do pliku\n6: Odczytaj z pliku\n7: Zakoncz\n";
 	cin >> wybor;
+
+	if (wybor == '7')
+		exit(0);
 
 	char typ_przedmiotu;
 	string n;
 	string a;
 	string g;
 	string p;
-	string k;
-	string s;
+	string k = " ";
+	string s = " ";
 	float w;
 	int c;
 	int i;
+	string wiersz = " ";
+	string linia3, linia4 = " ";
+	int nr_linii = 1;
 
 	do {
 		switch (wybor) {
@@ -103,7 +109,7 @@ int main() {
 				menuProvider->addItem(c, k, s);
 			}
 			else {
-				cout << "Podaj poprawna cyfre\n";
+				cout << "Niepoprawna cyfra. Wracam do menu.\n";
 			}
 
 			break;
@@ -111,7 +117,21 @@ int main() {
 		case '2':
 			cout << "Podaj ID przedmiotu do usuniecia: ";
 			cin >> i;
+
+
+			for (auto& n : menuProvider->productsList)
+			{
+				if (n.getID() == i) {
+					if (n.getCategory() == "gra planszowa" || n.getCategory() == "gra komputerowa") {
+						menuSklep->remove(i, menuProvider);
+						break;
+					}
+				}
+					
+			}
 			menuProvider->removeItem(i);
+			
+			
 			break;
 
 		case '3':
@@ -147,11 +167,8 @@ int main() {
 		case '6':
 
 			plik.open("gry.txt", ios::in);
-
-			string wiersz = " ";
-			string linia3, linia4 = " ";
+			
 			int linia2;
-			int nr_linii = 1;
 
 			menuProvider->productsList.clear();
 
@@ -180,15 +197,24 @@ int main() {
 			plik.close();
 			break;
 
+		case 7:
+			exit(0);
+
+		default:
+			cout << "\nWybierz poprawna operacje." << endl << endl;
+			break;
 		}
+
 			cout << "1: Dodaj przedmiot\n2: Usun przedmiot\n3: Wypisz baze przedmiotow\n4: Modyfikuj cene po ID\n5: Zapisz do pliku\n6: Odczytaj z pliku\n7: Zakoncz\n";
 			//	cin.ignore();
 			cin >> wybor;
-	
+
 	} while (wybor != '7');
 
 	delete menuSklep;
 	delete menuProvider;
+
+
 
 	return 0;
 }

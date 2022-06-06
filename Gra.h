@@ -8,7 +8,6 @@ using namespace std;
 class Gra
 {
 	friend class ListManager;
-	friend class ProductsProvider;
 
 protected:
 	string nazwa;
