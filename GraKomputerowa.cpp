@@ -1,5 +1,5 @@
 #include "GraKomputerowa.h"
 
 string GraKomputerowa::getDetails() {
-	return nazwa + autor + gatunek + platforma;
+	return "nazwa: " + nazwa + ", autor: " + autor + ", gatunek: " + gatunek + ", platforma: " + platforma;
 }

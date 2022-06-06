@@ -8,6 +8,7 @@ using namespace std;
 class Gra
 {
 	friend class ListManager;
+	friend class ProductsProvider;
 
 protected:
 	string nazwa;
@@ -21,7 +22,7 @@ public:
 		gatunek = genre;
 	}
 
-	void show();
+	
 
 	virtual string getDetails() = 0;
 

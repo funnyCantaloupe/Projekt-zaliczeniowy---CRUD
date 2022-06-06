@@ -14,6 +14,7 @@ public:
 	GraKomputerowa(Gra& gra, string platform = "PC") : Gra(gra), platforma(platform) {}
 
 	string getDetails();
+
 		
 };
 

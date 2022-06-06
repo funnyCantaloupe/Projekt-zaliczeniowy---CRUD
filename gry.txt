@@ -1,0 +1,15 @@
+1
+130
+gra komputerowa
+nazwa: ck3, autor: para, gatunek: rpg, platforma: pc
+
+2
+40
+ksiazka
+The Selfish Gene
+
+3
+95
+gra planszowa
+nazwa: Munchkin, autor: Black Monk, gatunek: karcianka, waga: 1.22
+

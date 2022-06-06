@@ -24,17 +24,9 @@ string Item::getDetail() {
 }
 
 Item::Item(int PRICE, string CATEGORY, string DETAIL) {
-	id = maxID;
 	maxID++;
+	id = maxID;
 	price = PRICE;
 	category = CATEGORY;
-	detail = DETAIL;
+	detail = DETAIL + "\n";
 }
-
-Item::Item(int PRICE, string CATEGORY, Gra* gra) {
-	id = maxID;
-	maxID++;
-	price = PRICE;
-	category = CATEGORY;
-}
-
