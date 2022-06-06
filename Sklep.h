@@ -5,13 +5,13 @@
 #include "Gra.h"
 #include "GraKomputerowa.h"
 #include "GraPlanszowa.h"
+#include "ProductsProvider.h"
 #include <vector>
 
 using namespace std;
 
 class Sklep
 {
-
 public:
 
 	GraKomputerowa* create(string title, string author, string genre, string platform);
@@ -20,7 +20,7 @@ public:
 
 	const vector<Gra*>& read() const;
 
-	void remove(int id);
+	void remove(int id, ProductsProvider* provider);
 
 	Gra* last_element(Sklep*);
 

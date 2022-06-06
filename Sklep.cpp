@@ -22,6 +22,16 @@ Gra* Sklep::last_element(Sklep* sklep) {
     return sklep->read().back();
 }
 
-void Sklep::remove(int id) {
-    gry.erase(gry.begin() + id);
+void Sklep::remove(int id, ProductsProvider* provider) {
+
+    int liczba_obiektow = 0;
+
+    for (auto& n : provider->productsList)
+    {
+        liczba_obiektow++;
+    }
+
+
+    gry.erase(gry.begin() + id - liczba_obiektow);
+
 }

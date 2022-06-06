@@ -153,7 +153,6 @@
     <ClInclude Include="GraPlanszowa.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ListManager.h" />
-    <ClInclude Include="exceptions.h" />
     <ClInclude Include="ProductsProvider.h" />
     <ClInclude Include="Sklep.h" />
   </ItemGroup>
