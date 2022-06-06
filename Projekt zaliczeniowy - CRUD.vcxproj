@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Gra.cpp" />
     <ClCompile Include="GraKomputerowa.cpp" />
     <ClCompile Include="GraPlanszowa.cpp" />
     <ClCompile Include="Item.cpp" />

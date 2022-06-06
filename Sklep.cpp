@@ -2,16 +2,16 @@
 
 using namespace std;
 
-void Sklep::create(string title, string author, string genre, string platform) {
-    Gra* gra = new GraKomputerowa(title, author, genre, platform);
+GraKomputerowa* Sklep::create(string title, string author, string genre, string platform) {
+    GraKomputerowa* gra = new GraKomputerowa(title, author, genre, platform);
     gry.push_back(gra);
-    delete gra;
+    return gra;
 }
 
-void Sklep::create(string title, string author, string genre, float weigth) {
-    Gra* gra = new GraPlanszowa(title, author, genre, weigth);
+GraPlanszowa* Sklep::create(string title, string author, string genre, float weigth) {
+    GraPlanszowa* gra = new GraPlanszowa(title, author, genre, weigth);
     gry.push_back(gra);
-    delete gra;
+    return gra;
 }
 
 const vector<Gra*>& Sklep::read() const {

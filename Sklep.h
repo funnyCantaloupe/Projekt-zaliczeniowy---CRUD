@@ -11,19 +11,20 @@ using namespace std;
 
 class Sklep
 {
-	vector<Gra*> gry;
 
 public:
 
-	void create(string title, string author, string genre, string platform);
+	GraKomputerowa* create(string title, string author, string genre, string platform);
 
-	void create(string title, string author, string genre, float weigth);
+	GraPlanszowa* create(string title, string author, string genre, float weigth);
 
 	const vector<Gra*>& read() const;
 
 	void remove(int id);
 
 	Gra* last_element(Sklep*);
+
+	vector<Gra*> gry;
 };
 
 #endif

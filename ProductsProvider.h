@@ -11,15 +11,14 @@ using namespace std;
 
 class ProductsProvider
 {
-	vector <Item> productsList;	
-
 public:
 
-	void addItem(int a, string b, Gra* c);
 	void addItem(int a, string b, string c);
 	void removeItem(int id);
 	void updateItem(int ID);
 	void getSortedItems();
+	void getSortedByID();
+	vector <Item> productsList;
 };
 
 #endif

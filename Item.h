@@ -13,7 +13,6 @@ class Item
 	int price;
 	string category;
 	string detail;
-	static int maxID;
 
 public:
 	void setPrice(int cena);
@@ -21,9 +20,9 @@ public:
 	int getPrice();
 	string getCategory();
 	string getDetail();
+	static int maxID;
 
 	Item(int, string, string);
-	Item(int, string, Gra*);
 
 };
 
